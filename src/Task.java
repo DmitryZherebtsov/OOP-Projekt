@@ -1,6 +1,6 @@
 public class Task {
-    private int taskId;
-    private String description;
+    private final int taskId;
+    private final String description;
     private boolean completed;
 
     // Konstruktor
@@ -28,5 +28,12 @@ public class Task {
     // Metoda do sprawdzania czy zadanie jest ukończone
     public boolean isCompleted() {
         return completed;
+    }
+
+    // interfejs
+    public interface TaskRepository {
+        void saveTask(Task task);
+        Task getTask(int taskId);
+        void removeTask(Task task);
     }
 }

@@ -37,4 +37,12 @@ public class User {
     public void removeTask(Task task) {
         tasks.remove(task);
     }
+
+    // interfejs
+    public interface UserRepository {
+        void saveUser(User user);
+        User getUser(int userId);
+        void removeUser(int userId);
+    }
+
 }

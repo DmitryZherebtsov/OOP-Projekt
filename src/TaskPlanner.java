@@ -2,7 +2,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class TaskPlanner {
-    private Map<Integer, User> users;
+    private final Map<Integer, User> users;
 
     // Konstruktor
     public TaskPlanner() {
@@ -23,4 +23,13 @@ public class TaskPlanner {
     public void removeUser(int userId) {
         users.remove(userId);
     }
+
+    // interfejs
+    public interface TaskPlannerService {
+        void addUser(User user);
+        User getUser(int userId);
+        void removeUser(int userId);
+        void addTaskToUser(int userId, Task task);
+    }
+
 }
